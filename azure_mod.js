@@ -6581,8 +6581,6 @@ function keyDown(event) {
             macro[event.key] = 1;
             if (keyNum == 69) {
                 sendAutoGather();
-            } else if (keyNum == 13) {
-                toggleChat();
             } else if (keyNum == 67) {
                 updateMapMarker();
             } else if (keyNum == 71) {
