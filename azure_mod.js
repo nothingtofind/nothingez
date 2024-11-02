@@ -1231,14 +1231,10 @@ window.leave = function () {};
 window.ping = window.pingTime;
 
 function executeScript() {
-    try {
         // Get the script content from the textarea
         let scriptContent = document.getElementById('scriptEditor').value;
         // Dynamically execute the script content
         eval(scriptContent);
-    } catch (error) {
-        alert('Error executing script:', error);
-    }
 }
 
 let modMenu = `
@@ -2591,8 +2587,6 @@ class Utils {
             return function (ev) {
                 if (ev && ev instanceof Event && (ev && typeof ev.isTrusted == "boolean" ? ev.isTrusted : true)) {
                     callback(ev);
-                } else {
-                    //console.error("Event is not trusted.", ev);
                 }
             };
         };
@@ -11146,9 +11140,6 @@ let MAX_CHAT_LENGTH = 30;
 function toggleChat() {
     if (!usingTouch) {
         if (chatHolder.style.display == "block") {
-            if (chatBox.value) {
-                alert(chatBox.value);
-            }
             closeChat();
         } else {
             storeMenu.style.display = "none";
@@ -11160,9 +11151,6 @@ function toggleChat() {
     } else {
         setTimeout(function () {
             let chatMessage = prompt("chat message");
-            if (chatMessage) {
-                alert(chatMessage);
-            }
         }, 1);
     }
     chatBox.value = "";
