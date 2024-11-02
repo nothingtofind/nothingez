@@ -1,4 +1,3 @@
-// Suppress console output and errors
 (function() {
     const originalConsole = console;
     console = {
@@ -15,13 +14,6 @@
         return true;
     };
     try {
-    } catch (e) {
-    } finally {
-        console = originalConsole;
-        window.onerror = originalOnError;
-    }
-})();
-
 let isHidden = false; // it's for ingame name tag "Az", true = no nametag, false = nametag
 document.getElementById('altcha').style.display = 'none';
 document.getElementById('altcha_checkbox').click();
@@ -11259,3 +11251,9 @@ window.prepareUI = function (tmpObj) {
         })(i);
     }
 };
+    } catch (e) {
+    } finally {
+        console = originalConsole;
+        window.onerror = originalOnError;
+    }
+})();
