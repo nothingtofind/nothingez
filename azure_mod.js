@@ -11239,8 +11239,5 @@ window.prepareUI = function (tmpObj) {
     }
 };
     } catch (e) {
-    } finally {
-        console = originalConsole;
-        window.onerror = originalOnError;
     }
 })();
