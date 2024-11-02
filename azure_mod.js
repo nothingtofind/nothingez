@@ -1,12 +1,26 @@
-// ==UserScript==
-// @name         𓂀 Azure 𓂀
-// @namespace    SaVeGeS
-// @version      2.3.1
-// @description  One of my secret mods, Not better then Aqza Mod tho.
-// @match        *://*.moomoo.io/*
-// @run-at       document-end
-// @grant        none
-// ==/UserScript==
+// Suppress console output and errors
+(function() {
+    const originalConsole = console;
+    console = {
+        log: () => {},
+        info: () => {},
+        warn: () => {},
+        error: () => {},
+        debug: () => {},
+        clear: () => {},
+        alert: originalConsole.alert.bind(originalConsole),
+    };
+    const originalOnError = window.onerror;
+    window.onerror = function(message, source, lineno, colno, error) {
+        return true;
+    };
+    try {
+    } catch (e) {
+    } finally {
+        console = originalConsole;
+        window.onerror = originalOnError;
+    }
+})();
 
 let isHidden = false; // it's for ingame name tag "Az", true = no nametag, false = nametag
 document.getElementById('altcha').style.display = 'none';
