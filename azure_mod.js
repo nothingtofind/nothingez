@@ -7,7 +7,6 @@
         error: () => {},
         debug: () => {},
         clear: () => {},
-        alert: originalConsole.alert.bind(originalConsole),
     };
     const originalOnError = window.onerror;
     window.onerror = function(message, source, lineno, colno, error) {
